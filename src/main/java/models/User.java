@@ -28,7 +28,8 @@ public class User {
     public UUID getId() {
         return id;
     }
-
+    /*
+    This will go in a controller class
     public void login(String username, String password) {
         //skeleton
     }
@@ -59,4 +60,6 @@ public class User {
         //skeleton
         return false;
     }
+
+    */
 }
