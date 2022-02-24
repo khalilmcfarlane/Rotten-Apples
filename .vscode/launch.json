@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RottenApplesApplication<Rotten-Apples>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "CS1530.RottenApples.RottenApplesApplication",
+            "projectName": "Rotten-Apples",
+            "args": ""
+        }
+    ]
+}

@@ -2,17 +2,19 @@ package models;
 import java.util.*;
 
 import org.springframework.data.annotation.Id;
-
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document(collection = "ProductDB")
 public class User { 
     @Id
     private UUID id;
-    
+
     private String username;
     private String password;
 
-    public User(String username, String password) {
+    public User(UUID id, String username, String password) {
         this.username = username;
         this.password = password;
+        this.id = id;
     }
     
     public String getUsername() {
