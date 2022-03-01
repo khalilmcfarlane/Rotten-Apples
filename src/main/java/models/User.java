@@ -3,13 +3,16 @@ import java.util.*;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-@Document(collection = "ProductDB")
+@Document(collection = "Users")
 public class User { 
     @Id
     private UUID id;
-
     private String username;
     private String password;
+
+    public User() {
+        
+    }
 
     public User(UUID id, String username, String password) {
         this.username = username;
