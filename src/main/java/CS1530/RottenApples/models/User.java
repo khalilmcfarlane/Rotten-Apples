@@ -1,8 +1,9 @@
-package models;
-import java.util.*;
+package CS1530.RottenApples.models;
 
+import java.util.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 @Document(collection = "Users")
 public class User { 
     @Id

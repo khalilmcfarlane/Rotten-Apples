@@ -1,7 +1,7 @@
 package CS1530;
 
-import repositories.UserRepository;
-import models.User;
+import CS1530.RottenApples.repositories.UserRepository;
+import CS1530.RottenApples.models.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
