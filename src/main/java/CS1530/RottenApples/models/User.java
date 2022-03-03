@@ -32,6 +32,17 @@ public class User {
     public UUID getId() {
         return id;
     }
+
+    public void setUser(String user) {
+        username = user;
+
+    }
+
+
+    public void setPassword(String pass) {
+        password = pass;
+
+    }
     /*
     This will go in a controller class
     public void login(String username, String password) {

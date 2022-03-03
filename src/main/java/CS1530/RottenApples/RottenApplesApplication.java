@@ -26,7 +26,6 @@ public class RottenApplesApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
 		if(userRepository.findAll().isEmpty()) {
 			UUID id = UUID.randomUUID();
 			userRepository.save(new User(id, "cs4life", "zxkj12rj2r"));
