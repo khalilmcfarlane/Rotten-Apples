@@ -20,6 +20,7 @@ public class Movie {
     private String director;
     @CsvBindByName(column = "release_date")
     private String releaseDate;
+    @CsvBindByName(column = "poster_path")
     private String poster;
 
     public Movie() {

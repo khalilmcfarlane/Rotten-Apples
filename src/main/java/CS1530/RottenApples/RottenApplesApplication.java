@@ -1,12 +1,20 @@
 package CS1530.RottenApples;
 
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.UUID;
+
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import CS1530.RottenApples.models.Movie;
 import CS1530.RottenApples.models.User;
 import CS1530.RottenApples.repositories.UserRepository;
 
@@ -31,7 +39,16 @@ public class RottenApplesApplication implements CommandLineRunner{
 			UUID id = UUID.randomUUID();
 			userRepository.save(new User(id, "cs4life", "zxkj12rj2r"));
 		}
-	
+		try {
+			Reader reader = Files.newBufferedReader(Paths.get("movies_metadata.csv"));
+		
+			
+			reader.close();
+		} catch(IOException e){
+			e.printStackTrace();
+		}
+		
+
 		/*
 		// IGNORE: JUST USE CSV
 			OR just parse csv file and populate
