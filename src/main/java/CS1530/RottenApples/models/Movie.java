@@ -17,7 +17,6 @@ public class Movie {
     private String title;
     @CsvBindByName(column = "genres")
     private String genre;
-    private String director;
     @CsvBindByName(column = "release_date")
     private String releaseDate;
     @CsvBindByName(column = "poster_path")
@@ -27,11 +26,10 @@ public class Movie {
 
     }
 
-    public Movie(int id, String title, String genre, String director, String releaseDate, String poster) {
+    public Movie(int id, String title, String genre, String releaseDate, String poster) {
         this.id = id;
         this.title = title;
         this.genre = genre;
-        this.director = director;
         this.releaseDate = releaseDate;
         this.poster = poster;
     }
@@ -58,14 +56,6 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
     }
 
     public String getReleaseDate() {
