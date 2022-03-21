@@ -3,23 +3,16 @@ package CS1530.RottenApples.models;
 
 import java.util.*;
 
-import com.opencsv.bean.CsvBindByName;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Movies")
 public class Movie {
-    @CsvBindByName
     @Id 
     private int id;
-    @CsvBindByName
     private String title;
-    @CsvBindByName(column = "genres")
     private String genre;
-    @CsvBindByName(column = "release_date")
     private String releaseDate;
-    @CsvBindByName(column = "poster_path")
     private String poster;
 
     public Movie() {
