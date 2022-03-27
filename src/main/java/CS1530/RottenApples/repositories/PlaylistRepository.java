@@ -9,7 +9,7 @@ import CS1530.RottenApples.models.User;
 
 
 //Waiting for playlist model for query and searchable playlist
-@Repository
-public interface PlaylistRepository extends MongoRepository<Playlist, Integer> { 
+// @Repository
+// public interface PlaylistRepository extends MongoRepository<Playlist, Integer> { 
 
-}
+// }
