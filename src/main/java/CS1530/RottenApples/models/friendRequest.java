@@ -9,7 +9,7 @@ public class friendRequest {
     private User recipient;
     private boolean accepted;
 
-    public friendRequest(User sender, User recipient) {
+    public friendRequest(User recipient, User sender) {
         this.sender = sender;
         this.recipient = recipient;
     }

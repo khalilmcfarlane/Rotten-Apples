@@ -11,4 +11,6 @@ import CS1530.RottenApples.models.User;
 public interface UserRepository extends MongoRepository<User, UUID> { 
     @Query("{'username' : ?0, 'password' : ?1}")
     User findByUser(String username, String password);
+    @Query("{'username' : ?0}")
+    User findFriend(String username);
 }
