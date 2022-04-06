@@ -13,6 +13,9 @@ public class friendRequest {
         this.sender = sender;
         this.recipient = recipient;
     }
+    public friendRequest() {
+        
+    }
     public User getSender() {
         return sender;
     }
