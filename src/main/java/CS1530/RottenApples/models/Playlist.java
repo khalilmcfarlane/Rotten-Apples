@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Playlist {
     @Id
     private String username;
+    private Movie movie;
+    private User user;
     private String playlistTitle;
     private ArrayList <Movie> movieTitles = new ArrayList<Movie>();
     private boolean isPrivate;
@@ -24,6 +26,7 @@ public class Playlist {
         this.playlistTitle= playlistTitle;
         this.isPrivate=false;
         this.moviesAdded=moviesAdded;
+       
 
     }
 /*
@@ -52,18 +55,18 @@ public class Playlist {
     }
     
     public Movie getMovies(){
-        return getMovies();
+        return movie;
     }
 
     public User getUsers(){
-        return getUsers();
+        return user;
     }
     
     public int moviesInPlaylist(){
-        return maxMovies;
+        return moviesAdded;
     }
 
     public int moviesLeftToAdd(){
-        return moviesAdded;
+        return maxMovies-moviesAdded;
     }
 }
