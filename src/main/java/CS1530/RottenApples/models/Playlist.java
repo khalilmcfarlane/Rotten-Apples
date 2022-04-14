@@ -8,11 +8,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Playlists")
 public class Playlist {
     @Id
-    private String username;
+    private Long id;
     private Movie movie;
     private User user;
     private String playlistTitle;
-    private ArrayList <Movie> movieTitles = new ArrayList<Movie>();
+    private List <Movie> movieTitles = new ArrayList<>();
     private boolean isPrivate;
     private final int maxMovies=15;
     private int moviesAdded;
@@ -21,13 +21,9 @@ public class Playlist {
         
     }
 
-    public Playlist(String username, String playlistTitle, ArrayList <Movie> movieTitles, boolean isPrivate, int moviesAdded){
-        this.username=username;
+    public Playlist(String playlistTitle, ArrayList <Movie> movieTitles, boolean isPrivate){
         this.playlistTitle= playlistTitle;
         this.isPrivate=false;
-        this.moviesAdded=moviesAdded;
-       
-
     }
 /*
  code goes in Playlist Controller Class
@@ -45,9 +41,18 @@ public class Playlist {
 
     }
 */
+    
     public void setPrivate(boolean isPrivate){
         //true if private, false otherwise
        this.isPrivate = isPrivate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public boolean isPrivate(){
@@ -61,7 +66,25 @@ public class Playlist {
     public User getUsers(){
         return user;
     }
+
     
+    
+    public String getPlaylistTitle() {
+        return playlistTitle;
+    }
+
+    public void setPlaylistTitle(String playlistTitle) {
+        this.playlistTitle = playlistTitle;
+    }
+
+    public List<Movie> getMovieTitles() {
+        return movieTitles;
+    }
+
+    public void setMovieTitles(List<Movie> movieTitles) {
+        this.movieTitles = movieTitles;
+    }
+
     public int moviesInPlaylist(){
         return moviesAdded;
     }
