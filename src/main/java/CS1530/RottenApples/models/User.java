@@ -11,6 +11,9 @@ public class User {
     private String username;
     private String password;
 
+    List<String> following = new ArrayList<>();
+
+    List<String> followers = new ArrayList<>();
     public User() {
         
     }
@@ -42,38 +45,13 @@ public class User {
         password = pass;
 
     }
-    /*
-    This will go in a controller class
-    public void login(String username, String password) {
-        //skeleton
+
+    public int getFollowing() {
+        return following.size();
     }
 
-    public void signout() {
-        //skeleton
+    public int getFollowers() {
+        return followers.size();
     }
-
-    public void addFriend(String username) {
-        //skeleton
-    }
-
-    public void inviteUser(String username, String playlist) {
-        //skeleton
-    }
-
-    public String displayFriends() {
-
-        //skeleton
-        return "";
-    }
-
-    public void createPlaylist() {
-        //skeleton
-    }
-
-    public boolean acceptInvite(String invite) {
-        //skeleton
-        return false;
-    }
-
-    */
+      
 }
