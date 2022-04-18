@@ -4,19 +4,19 @@
     <meta charset="ISO-8859-1">
     <title>Rotten Apples Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../static/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{styles/style.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon_io/favicon-32x32.png">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{favicon_io/favicon-32x32.png}">
 
 </head>
 <body>
     <nav>
         <ul>
             <li><a class="homepage" th:href="@{/}">Rotten Apples</a></li>
-            <li><a class="login" href="UserLogin.html">Log In</a></li>
-            <li><a class="signup" href="signup.html">Register</a></li>
+            <li><a class="login" th:href="@{/login}">Log In</a></li>
+            <li><a class="signup" th:href="@{/signup}">Register</a></li>
             <li><a class="homepage" th:href="@{playlists}">All Playlists</a></li>
         </ul>
     </nav>

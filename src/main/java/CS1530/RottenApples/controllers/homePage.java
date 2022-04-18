@@ -10,4 +10,14 @@ public class homePage {
         return "index";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "UserLogin";
+    }
+
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
+
 }
