@@ -16,6 +16,8 @@ public class Playlist {
     private boolean isPrivate;
     private int maxMovies = 15;
     private int moviesAdded;
+    //ArrayList<Playlist Object> to store playlist objects?
+    //HashMap/Hashtable to connect a friend (key) with a playlist (value)?  HashMap<Friend, ArrayList>
 
     public Playlist(){
         
