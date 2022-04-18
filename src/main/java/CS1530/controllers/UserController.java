@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import CS1530.RottenApples.impl.FriendImpl;
+import CS1530.RottenApples.models.Playlist;
 import CS1530.RottenApples.models.User;
 import CS1530.RottenApples.models.friendRequest;
 import CS1530.RottenApples.repositories.FriendRequestRepository;
@@ -41,21 +42,13 @@ public class UserController {
             System.out.print(reqs.toString().replaceAll("[]", ""));
         }
     }
-    //HOW - is this a database task?  
+     
     public void createPlaylist() {
         //skeleton
+        Playlist user = new Playlist();
+        user.setPlaylistTitle("How can I make this generic?");
+        //user.addMovieToPlaylist();
+        //user.addFriendToPlaylist();
+        //blah, blah
     }
-
-    //May change to type friendRequest; may also need recipient
-    /*public boolean acceptInvite(String invite, User recipient) {
-        friendRequest request = new friendRequest();
-        if(invite.equals("A friend has invited you to edit a playlist.")) {
-            request.setAccepted(true);
-            return true;
-        }
-        return false;
-    }
-
-    public void sendFriendRequest() {
-    }*/
 }
