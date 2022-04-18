@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Create a Playlist </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon_io/favicon-16x16.png">
+        <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Nav</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" th:href="@{/}">Home</a>
+              </div>
+            </div>
+        </nav>
+        <main id="main-holder"> 
+
+            <h1 id="create-header">Create Playlist</h1>
+    
+            <form id="create-playlist" th:action="@{/playlists/all}" th:object="${playlist}" method="post">
+                <input type="text" name="playlistTitle" th:value="*{playlistTitle}" id="name" class="create-form-field">
+                <input type="submit" value="Create Playlist" id="create-form-submit">
+            </form>
+
+        </main>
+    </body>
+</html>

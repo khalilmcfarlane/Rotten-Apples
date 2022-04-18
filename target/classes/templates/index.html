@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<head>
 <title> Sample </title>
 <link rel="stylesheet" href="../static/bootstrap-5.0.2-dist/css/bootstrap.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6,7 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-
+</head>
 <body>
-    <h1>Hello World!</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Nav</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" th:href="@{/}">Home</a>
+            <a class="nav-item nav-link" th:href="@{playlists}">All Playlists</a>
+            <a class="nav-item nav-link" th:href="@{'playlists/playlistInfoView}">Your Playlist</a>
+          </div>
+        </div>
+    </nav>
 </body>

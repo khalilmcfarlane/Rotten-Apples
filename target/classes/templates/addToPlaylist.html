@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Add Movie To Playlist </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon_io/favicon-16x16.png">
+        <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Nav</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="playlistInfo.html">Your Playlist</a>
+              </div>
+            </div>
+        </nav>
+        <main id="main-holder"> 
+    
+            <form id="create-playlist" action="addMovieToPlaylist">
+                Filter: <input type="text" name="title" id="title" class="create-form-field" placeholder="Movie Title" size="50" th:value="${movieTitle}" required>
+                <input type="submit" value="Search Movie" id="create-form-submit">
+            </form>
+
+        </main>
+    </body>
+</html>
