@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<title> Sample </title>
-<link rel="stylesheet" href="../static/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<script src="../static/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Rotten Apples Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{styles/style.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{favicon_io/favicon-32x32.png}">
 
+</head>
 <body>
-    <h1>Hello World!</h1>
+    <nav>
+        <ul>
+            <li><a class="homepage" th:href="@{/}">Rotten Apples</a></li>
+            <li><a class="login" th:href="@{/login}">Log In</a></li>
+            <li><a class="signup" th:href="@{/signup}">Register</a></li>
+            <li><a class="homepage" th:href="@{playlists}">All Playlists</a></li>
+        </ul>
+    </nav>
 </body>
+</html>

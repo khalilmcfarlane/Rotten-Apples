@@ -14,13 +14,18 @@ public class Playlist {
     private String playlistTitle;
     private List <Movie> movieTitles = new ArrayList<>();
     private boolean isPrivate;
-    private final int maxMovies=15;
+    private int maxMovies = 15;
     private int moviesAdded;
     //ArrayList<Playlist Object> to store playlist objects?
     //HashMap/Hashtable to connect a friend (key) with a playlist (value)?  HashMap<Friend, ArrayList>
 
     public Playlist(){
         
+    }
+
+    public Playlist(String playlistTitle, Long id) {
+        this.playlistTitle = playlistTitle;
+        this.id = id;
     }
 
     public Playlist(String playlistTitle, ArrayList <Movie> movieTitles, boolean isPrivate){
@@ -65,8 +70,12 @@ public class Playlist {
         return movie;
     }
 
-    public User getUsers(){
+    public User getUser(){
         return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     
@@ -87,8 +96,21 @@ public class Playlist {
         this.movieTitles = movieTitles;
     }
 
-    public int moviesInPlaylist(){
+
+    public int getMoviesAdded() {
         return moviesAdded;
+    }
+
+    public void setMoviesAdded(int moviesAdded) {
+        this.moviesAdded = moviesAdded;
+    }
+
+    public int getMaxMovies() {
+        return maxMovies;
+    }
+
+    public void setMaxMovies(int maxMovies) {
+        this.maxMovies = maxMovies;
     }
 
     public int moviesLeftToAdd(){
