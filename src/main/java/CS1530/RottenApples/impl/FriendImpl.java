@@ -20,8 +20,8 @@ public class FriendImpl {
     }
 
     public void addToFriends(String currentUser, String friendUserName) {
-        User curr = userRepository.findFriend(currentUser);
-        User friend = userRepository.findFriend(friendUserName);
+        User curr = userRepository.findByName(currentUser);
+        User friend = userRepository.findByName(friendUserName);
         if(!(checkFriendship(currentUser, friendUserName))) {
             friendRequest fr = new friendRequest();
             fr.setRecipient(curr);
@@ -32,8 +32,8 @@ public class FriendImpl {
     }
 
     public Boolean checkFriendship(String currentUser, String friendUserName) {
-        User curr = userRepository.findFriend(currentUser);
-        User friend = userRepository.findFriend(friendUserName);
+        User curr = userRepository.findByName(currentUser);
+        User friend = userRepository.findByName(friendUserName);
         friendRequest isFriend = friendRequestRepository.findFriend(curr, friend);
         if(isFriend != null) {
             return true;
