@@ -64,13 +64,13 @@ public class playlistController {
 
 */
    
-    @PostMapping("/playlists/{id}/movies")
-    public String addMovieToPlaylist(@PathVariable Long id, @RequestParam("movieTitle") String movieTitle) {
-       Playlist playlist = playlistRepository.findById(id).get();
+    @PostMapping("/playlists/{playlistId}/movies")
+    public String addMovieToPlaylist(@PathVariable Long playlistId, @RequestParam("movieId") int movieId) {
+       Playlist playlist = playlistRepository.findById(playlistId).get();
 
        //List<Movie> movieList = movieImpl.listAllMovies(movieTitle);
        //playlistImpl.addToPlaylist(id, movieTitle);
-       Movie movie = movieRepository.findMovie(movieTitle);
+       Movie movie = movieRepository.findById(movieId).get();
        playlist.getMovieTitles().add(movie);
        int num_movies = playlist.getMoviesAdded();
        num_movies++;

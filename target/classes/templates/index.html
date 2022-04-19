@@ -3,7 +3,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Rotten Apples Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Arvo&display=swap}" rel="stylesheet">
     <link rel="stylesheet" th:href="@{styles/style.css}">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -17,7 +17,7 @@
             <li><a class="homepage" th:href="@{/}">Rotten Apples</a></li>
             <li><a class="login" th:href="@{/login}">Log In</a></li>
             <li><a class="signup" th:href="@{/signup}">Register</a></li>
-            <li><a class="homepage" th:href="@{playlists}">All Playlists</a></li>
+            <li><a class="playlistpage" th:href="@{/playlists}">All Playlists</a></li>
         </ul>
     </nav>
 </body>
