@@ -65,7 +65,7 @@ nav a::before {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-color: #03071E;
+    background-color: #151717;
   }
 
   #signup-header {
