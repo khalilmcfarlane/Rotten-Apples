@@ -31,10 +31,10 @@ public class userController {
         User user = userRepository.findByName(username);
         if(user != null) {
             bindingResult.rejectValue("username", "error.user", "This user already exists.");
-            return "signup";
+            return "redirect:/signup";
         }  
         if(bindingResult.hasErrors()) {
-            return "signup";
+            return "redirect:/signup";
         }
         newUser.register(username, password);
         return "signup";
