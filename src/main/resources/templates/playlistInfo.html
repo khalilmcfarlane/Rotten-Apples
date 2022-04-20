@@ -19,7 +19,7 @@
         <li><a class="signup" th:href="@{/signup}">Register</a></li>
     </ul>
 </nav>
-    <!-- The rest is templating for the movies-->
+    <!-- The rest is templating for the movies
     <h2>Playlists</h2>
     <ul>
         <li th:each="playlist : ${playlists}">
@@ -40,6 +40,7 @@
     <form th:action="@{/playlists}" method="POST">
         <input type="text" name="playlistTitle"/><input type="submit" value="Add new playlist"/>
     </form>
+    -->
  <!-- Product list demo -->
 
 
@@ -57,16 +58,20 @@
 
   <div class="product-container">
     
-    
+
  
-<!--       First Product -->
+     
 <ul>
   <li class="card" th:each="playlist : ${playlists}">
     <div class="content">
-      <span class="title" th:text="${playlist.playlistTitle}">playlist name</span>
+      <h1 class="title" th:text="${playlist.playlistTitle}">playlist name</h1>
       <ul>
-          <li th:each="playlistMovie : ${playlist.movieTitles}" th:text="${playlistMovie.title}">Movie title</li>
+          <li th:each="playlistMovie : ${playlist.movieTitles}"  >
+                <img class="moviePoster" th:src="${playlistMovie.poster}">
+                <p class="movieTitle" th:text="${playlistMovie.title}"></p>
+          </li>
       </ul>
+
       <form th:action="@{/playlists/{id}/movies(id=${playlist.id})}" method="POST">
         <select name="movieId">
             <option th:each="movie: ${movies}" th:value="${movie.id}" th:text="${movie.title}">A movie</option>
@@ -78,7 +83,7 @@
 
   </li>
 </ul>
-  
+    
   
 </section>
 </body>
