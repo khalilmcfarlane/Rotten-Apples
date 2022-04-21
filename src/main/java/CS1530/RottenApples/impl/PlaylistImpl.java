@@ -7,7 +7,7 @@ public class PlaylistImpl {
     private MovieRepository movieRepository;
     private PlaylistRepository playlistRepository;
 
-    public void addToPlaylist(Long playlistId, String movieTitle) {
+    public void addToPlaylist(int playlistId, String movieTitle) {
         Playlist playlist = playlistRepository.findById(playlistId).get();
         Movie movie = movieRepository.findMovie(movieTitle);
         playlist.getMovieTitles().add(movie);

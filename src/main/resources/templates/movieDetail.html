@@ -3,13 +3,12 @@
 <head>
     <title th:text="${movie.title}"></title>
 
-    <link rel="icon" type="image/png" sizes="16x16" th:href="@{favicon_io/favicon-32x32.png}">
-    <link rel="stylesheet" th:href="@{/styles/movieDetail.css}">
-    <link rel="stylesheet" th:href="@{/styles/style.css}">
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <link th:href="@{https://fonts.googleapis.com/css2?family=Arvo&display=swap}" rel="stylesheet">
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <link rel="icon" type="image/png" sizes="16x16" th:href="@{favicon_io/favicon-32x32.png}">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon_io/favicon-32x32.png" th:href="@{favicon_io/favicon-32x32.png}">
+    <link rel="stylesheet" href="../static/styles/movieDetail.css"  th:href="@{/styles/movieDetail.css}">
+    <link rel="stylesheet" href="../static/styles/style.css" th:href="@{styles/style.css}">
+    <link rel="stylesheet" href="../static/bootstrap-5.0.2-dist/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" th:href="@{https://fonts.googleapis.com/css2?family=Arvo&display=swap}" rel="stylesheet">
+    <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body class="main">
   <nav>

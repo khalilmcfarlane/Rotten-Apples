@@ -40,9 +40,9 @@ public class playlistController {
     @PostMapping("/playlists")
     public String createPlaylistHome(String playlistTitle) {
         Playlist playlist = new Playlist();
-        long rand = ThreadLocalRandom.current().nextLong(0, 1000);
+        int rand = ThreadLocalRandom.current().nextInt(0, 1000);
         while(playlistRepository.existsById(rand)) {
-            rand = ThreadLocalRandom.current().nextLong();
+            rand = ThreadLocalRandom.current().nextInt(0, 1000);
         }
         playlist.setId(rand);
         
@@ -65,7 +65,7 @@ public class playlistController {
 */
    
     @PostMapping("/playlists/{playlistId}/movies")
-    public String addMovieToPlaylist(@PathVariable Long playlistId, @RequestParam("movieId") int movieId, Model model) {
+    public String addMovieToPlaylist(@PathVariable int playlistId, @RequestParam("movieId") int movieId, Model model) {
         Playlist playlist = playlistRepository.findById(playlistId).get();
 
         //List<Movie> movieList = movieImpl.listAllMovies(movieTitle);
@@ -77,6 +77,7 @@ public class playlistController {
         int num_movies = playlist.getMoviesAdded();
         num_movies++;
         playlist.setMoviesAdded(num_movies);
+        playlistRepository.save(playlist);
         return "redirect:/playlists";
     }
 }
