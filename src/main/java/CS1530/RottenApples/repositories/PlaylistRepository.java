@@ -12,7 +12,7 @@ import CS1530.RottenApples.models.User;
 
 
  @Repository
- public interface PlaylistRepository extends MongoRepository<Playlist, Long> { 
+ public interface PlaylistRepository extends MongoRepository<Playlist, Integer> { 
    @Query("{'title' : ?0}")
     Playlist findbyPlaylist(String playlistTitle);
 

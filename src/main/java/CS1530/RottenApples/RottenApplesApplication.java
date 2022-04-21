@@ -14,14 +14,21 @@ import CS1530.RottenApples.repositories.PlaylistRepository;
 
 @SpringBootApplication
 public class RottenApplesApplication implements CommandLineRunner{
-	
+	@Autowired
+	private PlaylistRepository playlistRepository;
+	private MovieRepository movieRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(RottenApplesApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-	
+		if(playlistRepository.findAll().isEmpty()) {
+			Playlist playlist = new Playlist();
+			playlist.setId(30);
+			playlist.setPlaylistTitle("Test");
+			playlistRepository.save(playlist);
+		}
 	}
 
 }
