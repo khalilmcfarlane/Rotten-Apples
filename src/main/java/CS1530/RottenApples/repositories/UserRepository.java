@@ -16,6 +16,8 @@ public interface UserRepository extends MongoRepository<User, UUID> {
     @Query("{'username' : ?0}")
     User findByName(String username);
 
-    
+    public default void register(String username, String password) {
+        save(new User(UUID.randomUUID(), username, password));
+    }
 
 }

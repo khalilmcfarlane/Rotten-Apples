@@ -7,13 +7,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import CS1530.RottenApples.impl.FriendImpl;
-import CS1530.RottenApples.impl.UserImpl;
 import CS1530.RottenApples.models.User;
 import CS1530.RottenApples.models.friendRequest;
 import CS1530.RottenApples.repositories.UserRepository;
@@ -22,38 +20,20 @@ import CS1530.RottenApples.repositories.UserRepository;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
-
-    private UserImpl newUser;
     
     @PostMapping("/signup")
-    public String register(String username, String password, BindingResult bindingResult) {
-        newUser = new UserImpl();
-        User user = userRepository.findByName(username);
-        if(user != null) {
-            bindingResult.rejectValue("username", "error.user", "This user already exists.");
-            //return "redirect:/signup"; just ignore this return stmt for now
-        }  
-       /* if(bindingResult.hasErrors()) {
-            return "redirect:/signup";
-        }*/
-        newUser.register(username, password);
-        return "signup";
+    public String register(String username, String password) {
+        userRepository.register(username, password);
+        return "redirect:/";
     }
 
     @PostMapping("/login")
-    public String login(String username, String password, HttpSession session) {
-        UserImpl loginUser = new UserImpl();
+    public String login(String username, String password) {
         User user = userRepository.findByUser(username, password);
-        if(user == null) {
-            return "redirect:/UserLogin?error";
+        if(user.getUsername() != null && user.getPassword() != null) {
+            return "redirect:/";
         }
-        else {
-            session.setAttribute("user", user);
-            //Is this needed?
-            loginUser.login(username, password);
-            //What do I return to?
-            return "UserLogin";
-        } 
+        return null;
     }
 
     @GetMapping(value = "logout")
