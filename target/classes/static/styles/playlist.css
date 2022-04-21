@@ -113,7 +113,7 @@ body {
   }
   
   .card .title {
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
     font-family: 'Arvo', serif;
 
@@ -308,3 +308,20 @@ body {
   .search-input:focus {
     outline: none;
   }
+.row {
+  display: flex;
+}
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+h2.add {
+  white-space: nowrap;
+  font-size: 30px;
+  padding-top: 40px;
+}
+
+form.createPlaylistForm {
+  padding-top: 80px;
+}

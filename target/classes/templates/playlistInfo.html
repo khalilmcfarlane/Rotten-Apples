@@ -51,38 +51,44 @@
     </h1>
   </div>
   
-  <div class="searchbar">
-      <input class="search-input" placeholder="Search">
-      <span class="search-icon"></span>
-    </div>
+  
 
   <div class="product-container">
     
 
  
      
-<ul>
-  <li class="card" th:each="playlist : ${playlists}">
-    <div class="content">
-      <h1 class="title" th:text="${playlist.playlistTitle}">playlist name</h1>
-      <ul>
-          <li th:each="playlistMovie : ${playlist.movieTitles}"  >
-                <img class="moviePoster" th:src="${playlistMovie.poster}">
-                <p class="movieTitle" th:text="${playlistMovie.title}"></p>
-          </li>
-      </ul>
+  <ul class="row">
 
-      <form th:action="@{/playlists/{id}/movies(id=${playlist.id})}" method="POST">
-        <select name="movieId">
-            <option th:each="movie: ${movies}" th:value="${movie.id}" th:text="${movie.title}">A movie</option>
-        </select>
-        <input type="submit" value="Add movie!"></input>
-      </form>
+    <div class="card" th:each="playlist : ${playlists}">
+      <div class="column">
+        <h1 class="title" th:text="${playlist.playlistTitle}">playlist name</h1>
+        <ul class="image">
+            <li class="text" th:each="playlistMovie : ${playlist.movieTitles}"  >
+                  <a th:href="@{/movies/{id}(id=${playlistMovie.id})}">
+                    <img class="moviePoster" th:src="${playlistMovie.poster}">
+                  </a>
+                  <p class="movieTitle" th:text="${playlistMovie.title}"></p>
+            </li>
+        </ul>
+
+        <form th:action="@{/playlists/{id}/movies(id=${playlist.id})}" method="POST">
+          <select name="movieId">
+              <option th:each="movie: ${movies}" th:value="${movie.id}" th:text="${movie.title}">A movie</option>
+          </select>
+          <input type="submit" value="Add movie!"></input>
+        </form>
+    
+      </div>
+
+    </div>
    
-     </div>
+  </ul>
 
-  </li>
-</ul>
+  <h2 class="add" >Add a playlist</h2>
+  <form class="createPlaylistForm" th:action="@{/playlists}" method="POST">
+      <input type="text" name="playlistTitle"/><input type="submit" value="Add new playlist"/>
+  </form>
     
   
 </section>
