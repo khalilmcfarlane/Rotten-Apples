@@ -20,9 +20,13 @@ public class UserImpl {
     }
 
     public boolean login(String username, String password) {
+        //userRepository is an instance of the UserRepository class, which queries MongoDB
         User user = userRepository.findByUser(username, password);
 
-        if(user.getUsername() != null && user.getPassword() != null) {
+        /*if(user.getUsername() != null && user.getPassword() != null) {
+            return true;
+        }*/
+        if(user != null) {
             return true;
         }
         return false;
