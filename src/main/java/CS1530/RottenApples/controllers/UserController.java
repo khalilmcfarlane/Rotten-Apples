@@ -19,7 +19,7 @@ import CS1530.RottenApples.models.friendRequest;
 import CS1530.RottenApples.repositories.UserRepository;
 
 @Controller
-public class userController {
+public class UserController {
     @Autowired
     private UserRepository userRepository;
 
