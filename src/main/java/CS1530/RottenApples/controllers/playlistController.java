@@ -77,6 +77,7 @@ public class playlistController {
         int num_movies = playlist.getMoviesAdded();
         num_movies++;
         playlist.setMoviesAdded(num_movies);
+        playlistRepository.save(playlist);
         return "redirect:/playlists";
     }
 }
