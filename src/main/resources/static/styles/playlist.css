@@ -224,6 +224,7 @@ body {
   p.movieTitle {
       font-size: 30px;
       color: #9D0208;
+      text-align: center;
   }
   
   .text,
