@@ -1,0 +1,26 @@
+.content {
+    padding: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img.moviePoster {
+    padding-bottom: 2em;
+    border-radius: 20px;
+}
+
+.main {
+    font-family: 'Arvo', sans-serif;
+}
+
+.movieTitle {
+    font-size: 40px;
+    text-align: center;
+}
+
+.releaseDate, .genre {
+    font-size: 35px;
+    text-align: center;
+}

@@ -64,17 +64,19 @@ public class playlistController {
 
 */
    
-    @PostMapping("/playlists/{id}/movies")
-    public String addMovieToPlaylist(@PathVariable Long id, @RequestParam("movieTitle") String movieTitle) {
-       Playlist playlist = playlistRepository.findById(id).get();
+    @PostMapping("/playlists/{playlistId}/movies")
+    public String addMovieToPlaylist(@PathVariable Long playlistId, @RequestParam("movieId") int movieId, Model model) {
+        Playlist playlist = playlistRepository.findById(playlistId).get();
 
-       //List<Movie> movieList = movieImpl.listAllMovies(movieTitle);
-       //playlistImpl.addToPlaylist(id, movieTitle);
-       Movie movie = movieRepository.findMovie(movieTitle);
-       playlist.getMovieTitles().add(movie);
-       int num_movies = playlist.getMoviesAdded();
-       num_movies++;
-       playlist.setMoviesAdded(num_movies);
-       return "redirect:/playlists";
+        //List<Movie> movieList = movieImpl.listAllMovies(movieTitle);
+        //playlistImpl.addToPlaylist(id, movieTitle);
+        Movie movie = movieRepository.findById(movieId).get();
+        playlist.getMovieTitles().add(movie);
+        model.addAttribute("moviesInPlaylist", playlist.getMovies());
+        playlistRepository.save(playlist);
+        int num_movies = playlist.getMoviesAdded();
+        num_movies++;
+        playlist.setMoviesAdded(num_movies);
+        return "redirect:/playlists";
     }
 }

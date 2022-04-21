@@ -1,13 +1,16 @@
+
 body {
-    background-color: #03071E;
-  
+    background-color: #151717;
+    color: #9D0208;
+
 }
 
-container-sm {
-  padding-right:
+body.main {
+  background-color: #151717;
+  color: #9D0208;
+
+
 }
-
-
 nav ul {
     margin: 0;
     padding: 0;
@@ -63,3 +66,5 @@ nav a::before {
     margin: 0;
     padding: 0;
   }
+
+  

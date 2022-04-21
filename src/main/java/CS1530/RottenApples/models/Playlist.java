@@ -12,7 +12,7 @@ public class Playlist {
     private Movie movie;
     private User user;
     private String playlistTitle;
-    private List <Movie> movieTitles = new ArrayList<>();
+    List <Movie> movieTitles = new ArrayList<>();
     private boolean isPrivate;
     private int maxMovies = 15;
     private int moviesAdded;

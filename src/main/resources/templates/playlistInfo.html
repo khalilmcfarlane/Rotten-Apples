@@ -3,37 +3,33 @@
 <head>
     <title>Add Movie to Playlist</title>
 
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{favicon_io/favicon-32x32.png}">
+    <link rel="stylesheet" th:href="@{styles/style.css}">
+    <link rel="stylesheet" th:href="@{styles/playlist.css}">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Arvo&display=swap}" rel="stylesheet">
     <script th:src="@{/js/bootstrap.min.js}"></script>
     <link rel="icon" type="image/png" sizes="16x16" th:href="@{favicon_io/favicon-32x32.png}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Nav</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" th:href="@{/}">Home</a>
-            <a class="nav-item nav-link" th:href="@{/{playlistId}/movies}">Add Movie to Playlist</a>
-          </div>
-        </div>
-    </nav>
-    <!-- The rest is templating for the movies-->
+  <nav>
+    <ul>
+        <li><a class="homepage" th:href="@{/}">Rotten Apples</a></li>
+        <li><a class="login" th:href="@{/login}">Log In</a></li>
+        <li><a class="signup" th:href="@{/signup}">Register</a></li>
+    </ul>
+</nav>
+    <!-- The rest is templating for the movies
     <h2>Playlists</h2>
     <ul>
         <li th:each="playlist : ${playlists}">
             <span th:text="${playlist.playlistTitle}">playlist name</span>
             <ol>
-                <li th:each="playlistMovie : ${playlist.getMovieTitles()}" th:text="${playlistMovie.title}">Movie title</li>
+                <li th:each="playlistMovie : ${playlist.movieTitles}" th:text="${playlistMovie.title}">Movie title</li>
             </ol>
             <form th:action="@{/playlists/{id}/movies(id=${playlist.id})}" method="POST">
-              <select name="movieTitle">
-                  <option th:each="movie: ${movies}" th:value="${movie.title}" th:text="${movie.title}">A movie</option>
+              <select name="movieId">
+                  <option th:each="movie: ${movies}" th:value="${movie.id}" th:text="${movie.title}">A movie</option>
               </select>
               <input type="submit" value="Add movie!"></input>
           </form>
@@ -44,6 +40,57 @@
     <form th:action="@{/playlists}" method="POST">
         <input type="text" name="playlistTitle"/><input type="submit" value="Add new playlist"/>
     </form>
+    -->
+ <!-- Product list demo -->
 
+
+ <section class="product-list ">
+  <div>
+    <h1 class="align-center">
+      Playlists
+    </h1>
+  </div>
+  
+  
+
+  <div class="product-container">
+    
+
+ 
+     
+  <ul class="row">
+
+    <div class="card" th:each="playlist : ${playlists}">
+      <div class="column">
+        <h1 class="title" th:text="${playlist.playlistTitle}">playlist name</h1>
+        <ul class="image">
+            <li class="text" th:each="playlistMovie : ${playlist.movieTitles}"  >
+                  <a th:href="@{/movies/{id}(id=${playlistMovie.id})}">
+                    <img class="moviePoster" th:src="${playlistMovie.poster}">
+                  </a>
+                  <p class="movieTitle" th:text="${playlistMovie.title}"></p>
+            </li>
+        </ul>
+
+        <form th:action="@{/playlists/{id}/movies(id=${playlist.id})}" method="POST">
+          <select name="movieId">
+              <option th:each="movie: ${movies}" th:value="${movie.id}" th:text="${movie.title}">A movie</option>
+          </select>
+          <input type="submit" value="Add movie!"></input>
+        </form>
+    
+      </div>
+
+    </div>
+   
+  </ul>
+
+  <h2 class="add" >Add a playlist</h2>
+  <form class="createPlaylistForm" th:action="@{/playlists}" method="POST">
+      <input type="text" name="playlistTitle"/><input type="submit" value="Add new playlist"/>
+  </form>
+    
+  
+</section>
 </body>
 </html>
